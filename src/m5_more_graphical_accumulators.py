@@ -270,32 +270,32 @@ def run_test_draw_lines_from_rectangles():
 
     # TWO tests on ONE window.
     title = 'Tests 1 & 2 of DRAW_LINES_FROM_RECTANGLES:'
-    title += '  5 lines, 8 lines!'
-    window1 = rg.RoseWindow(900, 400, title)
+    title += '  10 lines, 14 lines.'
+    window1 = rg.RoseWindow(1000, 1000, title)
 
-    rectangle1 = rg.Rectangle(rg.Point(100, 25), rg.Point(150, 125))
-    rectangle2 = rg.Rectangle(rg.Point(300, 150), rg.Point(400, 175))
+    rectangle1 = rg.Rectangle(rg.Point(575, 550), rg.Point(425, 450))
+    rectangle2 = rg.Rectangle(rg.Point(445, 400), rg.Point(450, 300))
     rectangle1.outline_color = 'red'
     rectangle2.outline_color = 'blue'
-    draw_lines_from_rectangles(rectangle1, rectangle2, 5, window1)
+    draw_lines_from_rectangles(rectangle1, rectangle2, 10, window1)
 
-    rectangle1 = rg.Rectangle(rg.Point(870, 30), rg.Point(750, 100))
-    rectangle2 = rg.Rectangle(rg.Point(700, 90), rg.Point(650, 60))
+    rectangle1 = rg.Rectangle(rg.Point(140,100), rg.Point(600, 200))
+    rectangle2 = rg.Rectangle(rg.Point(100,140), rg.Point(625, 35))
     rectangle2.outline_color = 'green'
-    draw_lines_from_rectangles(rectangle1, rectangle2, 8, window1)
+    draw_lines_from_rectangles(rectangle1, rectangle2, 14, window1)
 
     window1.close_on_mouse_click()
 
     # A third test on ANOTHER window.
-    title = 'Test 3 of DRAW_LINES_FROM_RECTANGLES:  11 lines!'
+    title = 'Test 3 of DRAW_LINES_FROM_RECTANGLES:  14 lines.'
     window2 = rg.RoseWindow(700, 700, title)
 
     rectangle1 = rg.Rectangle(rg.Point(550, 200), rg.Point(650, 100))
     rectangle2 = rg.Rectangle(rg.Point(600, 50), rg.Point(650, 75))
-    rectangle1.outline_color = 'brown'
-    rectangle2.outline_color = 'cyan'
+    rectangle1.outline_color = 'blue'
+    rectangle2.outline_color = 'green'
     rectangle2.outline_thickness = 10
-    draw_lines_from_rectangles(rectangle1, rectangle2, 11, window2)
+    draw_lines_from_rectangles(rectangle1, rectangle2, 14, window2)
 
     window2.close_on_mouse_click()
 
@@ -337,7 +337,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type window: rg.RoseWindow
       """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -368,7 +368,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
 
     for k in range(n):
         line = rg.Line(start, end)
-        line.thickness = 5
+        line.thickness = 2
         if k % 2 == 0:
             line.color = rectangle1.outline_color
         else:
